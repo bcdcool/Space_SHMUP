@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour {
     public float health = 10;
     public int score = 100;
 
-    public int showDamageForFrames = 2; 
+    public int showDamageForFrames = 2;
+    public float powerUpDropChance = 1f; 
 
     public bool ________________;
 
@@ -91,6 +92,7 @@ public class Enemy : MonoBehaviour {
                 bounds.center = transform.position + boundsCenterOffset;
                 if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck(bounds, BoundsTest.offScreen) != Vector3.zero)
                 {
+                    Main.S.ShipDestroyed(this); 
                     Destroy(other);
                     break; 
                 }
