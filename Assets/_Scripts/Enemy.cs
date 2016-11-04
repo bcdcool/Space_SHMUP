@@ -97,6 +97,7 @@ public class Enemy : MonoBehaviour {
                     break; 
                 }
 
+                health -= 1; 
                 ShowDamage(); 
 
                 if (health <= 0)
