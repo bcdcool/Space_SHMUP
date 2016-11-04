@@ -101,6 +101,7 @@ public class Enemy : MonoBehaviour {
 
                 if (health <= 0)
                 {
+                    Main.S.ShipDestroyed(this); 
                     Destroy(this.gameObject);
                 }
                 Destroy(other);
